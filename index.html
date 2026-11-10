@@ -199,6 +199,45 @@ nav a.cta:hover{background:#2b2d33}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq details p{padding:0 0 20px;color:var(--soft);max-width:760px}
 
+/* цена и таймер */
+.price{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.price .now{font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1}
+.price .now s{display:none}
+.price .old{font-size:19px;color:#9a958b;text-decoration:line-through;text-decoration-thickness:1.5px}
+.price .off{font-size:13.5px;font-weight:600;background:var(--accent);color:#fff;border-radius:7px;padding:4px 8px;letter-spacing:.02em}
+.price .start{font-size:14.5px;color:var(--soft);width:100%}
+.timer{display:inline-flex;align-items:center;gap:8px;border:1px solid #e8d3ba;background:#fdf3e7;border-radius:999px;padding:7px 14px;font-size:14.5px;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.timer svg{width:16px;height:16px;flex:none}
+.timer b{font-weight:600;letter-spacing:.02em}
+.timer.off{border-color:var(--line);background:#efece5;color:var(--soft)}
+.timer .lbl{color:var(--soft)}
+
+/* стоимость */
+.buy{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:40px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:36px}
+.buy h2{margin-bottom:6px}
+.buy .sub{color:var(--soft);margin-bottom:20px}
+.buy ul{list-style:none;margin:0;padding:0}
+.buy li{padding:9px 0 9px 28px;position:relative;border-top:1px solid var(--line);font-size:15.5px}
+.buy li:first-child{border-top:0}
+.buy li::before{content:"";position:absolute;left:2px;top:16px;width:12px;height:7px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.buy .price{margin-top:0}
+.buy .note{font-size:14px;color:var(--soft);margin-top:16px}
+
+/* мобильная полоса */
+.stockbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;align-items:center;gap:12px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,253,249,.97);backdrop-filter:blur(10px);border-top:1px solid var(--line);box-shadow:0 -8px 24px -18px rgba(0,0,0,.4)}
+.stockbar .p{line-height:1.15}
+.stockbar .p b{font-size:19px;font-weight:600;display:block}
+.stockbar .p s{font-size:12.5px;color:var(--soft)}
+.stockbar .btn{margin-left:auto;min-height:44px;padding:0 16px;font-size:15px}
+.stockbar .timer{padding:5px 10px;font-size:13px;border-radius:8px}
+@media (max-width:760px){
+  .stockbar{display:flex}
+  body{padding-bottom:72px}
+  .buy{padding:24px;grid-template-columns:minmax(0,1fr)}
+  .price .now{font-size:30px}
+}
+@media (max-width:1020px){.buy{grid-template-columns:minmax(0,1fr);gap:26px}}
+
 /* контакты */
 .contacts{padding:34px 0 40px;border-top:1px solid var(--line)}
 .contacts .lbl{font-size:15px;font-weight:600;margin-bottom:14px}
@@ -274,8 +313,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     <div>
       <h1>Искусственный интеллект с&nbsp;нуля до&nbsp;уровня <em>эффективного использования</em></h1>
       <p class="lead">За неделю ставим на ваш ноутбук рабочую систему ИИ и собираем помощника, который дальше работает на вас каждый день.</p>
+      <div class="price" data-price>
+        <span class="old" data-old>120 000 ₽</span>
+        <span class="now"><span data-now>84 000 ₽</span></span>
+        <span class="off" data-off>скидка 30%</span>
+        <span class="timer" data-timer>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span class="lbl">до конца скидки</span> <b data-clock>считаем</b>
+        </span>
+        <span class="start" data-start>Старт группы - 1 декабря 2026. Скидка действует до 30 ноября.</span>
+      </div>
       <div class="btns">
-        <a class="btn btn-main" href="#contacts">Записаться на курс</a>
+        <a class="btn btn-main" href="#contacts" data-cta>Записаться со скидкой</a>
         <a class="btn btn-ghost" href="#program">Программа по дням</a>
       </div>
     </div>
@@ -617,6 +666,36 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   </div>
 </section>
 
+<section id="price">
+  <div class="wrap">
+    <div class="buy rise">
+      <div>
+        <h2>Стоимость</h2>
+        <p class="sub">Одна цена за всю неделю, без доплат за материалы.</p>
+        <ul>
+          <li>6 вечерних встреч, группа до 10 человек</li>
+          <li>Настройка системы на вашем ноутбуке</li>
+          <li>Проверка домашних заданий и разбор ошибок</li>
+          <li>Неделя поддержки в чате после курса</li>
+        </ul>
+      </div>
+      <div>
+        <div class="price" data-price>
+          <span class="old" data-old>120 000 ₽</span>
+          <span class="now"><span data-now>84 000 ₽</span></span>
+          <span class="off" data-off>скидка 30%</span>
+          <span class="timer" data-timer>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span class="lbl">до конца скидки</span> <b data-clock>считаем</b>
+          </span>
+        </div>
+        <a class="btn btn-main" href="#contacts" style="margin-top:22px" data-cta>Записаться со скидкой</a>
+        <p class="note">Старт группы 1 декабря 2026. Записаться можно в Telegram или по телефону - расскажу, что подготовить до первой встречи.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contacts" class="contacts">
   <div class="wrap">
     <div class="lbl">Контакты</div>
@@ -637,6 +716,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   </div>
 </section>
 </main>
+
+<div class="stockbar" role="region" aria-label="Стоимость и запись">
+  <div class="p"><b data-now>84 000 ₽</b><s data-old>120 000 ₽</s></div>
+  <span class="timer" data-timer><b data-clock>считаем</b></span>
+  <a class="btn btn-main" href="#contacts" data-cta2>Записаться</a>
+</div>
 
 <footer>
   <div class="wrap">
@@ -661,6 +746,40 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     tb.forEach(function(x){x.setAttribute('aria-selected',x===t?'true':'false')});
     document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id===t.getAttribute('aria-controls'))});
   })});
+
+  // скидка до 30 ноября 2026, 23:59 МСК
+  var end = new Date('2026-11-30T23:59:59+03:00').getTime();
+  var start = new Date('2026-12-01T10:00:00+03:00').getTime();
+  var clocks = document.querySelectorAll('[data-clock]');
+  var blocks = document.querySelectorAll('[data-price]');
+  var bars = document.querySelectorAll('[data-timer]');
+  function pad(n){return n<10?'0'+n:''+n}
+  function tick(){
+    var left = end - Date.now();
+    if(left <= 0){
+      blocks.forEach(function(b){
+        var now=b.querySelector('[data-now]'), old=b.querySelector('[data-old]'), off=b.querySelector('[data-off]');
+        if(now) now.textContent='120 000 ₽';
+        if(old) old.style.display='none';
+        if(off){off.textContent='скидка закончилась'; off.className='off'; off.style.background='#9a958b'}
+      });
+      bars.forEach(function(x){x.classList.add('off')});
+      clocks.forEach(function(c){c.textContent='акция завершена'});
+      document.querySelectorAll('[data-cta]').forEach(function(a){a.textContent='Записаться'});
+      var started = Date.now() > start;
+      document.querySelectorAll('[data-start]').forEach(function(e){
+        e.textContent = started
+          ? 'Группа стартовала 1 декабря 2026. Напишите, расскажу про следующую.'
+          : 'Старт группы - 1 декабря 2026. Скидка закончилась 30 ноября.';
+      });
+      return;
+    }
+    var s=Math.floor(left/1000), d=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60), sec=s%60;
+    var txt=(d>0? d+' дн ':'')+pad(h)+':'+pad(m)+':'+pad(sec);
+    clocks.forEach(function(c){c.textContent=txt});
+    setTimeout(tick, 1000);
+  }
+  tick();
 
   var els=document.querySelectorAll('.rise');
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}

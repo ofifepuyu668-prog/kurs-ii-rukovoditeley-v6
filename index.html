@@ -200,16 +200,14 @@ nav a.cta:hover{background:#2b2d33}
 .faq details p{padding:0 0 20px;color:var(--soft);max-width:760px}
 
 /* контакты */
-.contact{background:var(--ink);color:#fff;border-radius:28px;padding:44px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:40px;align-items:center}
-.contact h2{margin-bottom:10px}
-.contact p{color:#b9bbc2}
-.clist{display:grid;gap:12px}
-.clist a{display:flex;align-items:center;gap:16px;background:#1f2126;border:1px solid #2e3036;border-radius:16px;padding:16px 20px;text-decoration:none;min-height:64px;transition:background .15s}
-.clist a:hover{background:#272a30}
-.clist .ci{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex:none}
-.clist .ci svg{width:20px;height:20px}
-.clist small{display:block;color:#9a9ca4;font-size:13px}
-.clist b{font-weight:600;font-size:17px}
+.contacts{padding:34px 0 40px;border-top:1px solid var(--line)}
+.contacts .lbl{font-size:15px;font-weight:600;margin-bottom:14px}
+.clist{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center}
+.clist a{display:inline-flex;align-items:center;gap:9px;min-height:44px;font-size:17px;text-decoration:none;color:var(--ink);border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.clist a:hover,.clist a:focus-visible{color:var(--accent-ink);border-bottom-color:var(--accent-ink)}
+.clist a:focus-visible{outline:none}
+.clist svg{width:18px;height:18px;flex:none;color:var(--soft);transition:color .15s}
+.clist a:hover svg{color:var(--accent-ink)}
 
 footer{padding:36px 0 52px;color:var(--soft);font-size:14.5px}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -599,15 +597,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <div>
         <h2>Иван Бегин</h2>
         <div class="role">Преподаватель курса</div>
-        <p>19 лет в финансах и управленческом учёте. С 2024 года занимаюсь автоматизацией и ИИ-решениями: не пересказываю чужие инструкции, а каждый день работаю в системе, которую показываю на курсе - агенты, память компании, сводки и протоколы, боты, которые отвечают клиентам.</p>
-        <p>Поэтому ИИ у меня стоит не ради технологии, а под задачи бизнеса: контроль поручений, отчёты, ответы на вопросы по компании.</p>
-        <p>Страница, на которой вы это читаете, скриншоты и ответы в демо выше собраны в этой же системе.</p>
+        <p>19 лет в финансах и управленческом учёте. С 2024 года занимаюсь автоматизацией и ИИ-решениями: ежедневно работаю с инструментами, которые покажу на курсе.</p>
+        <p>Уверен, что в ближайшие два года ИИ перестроит многие процессы в мире, в том числе в бизнесе. Кто освоит его раньше, будет делать те же задачи быстрее и дешевле.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="faq" style="padding-top:24px">
+<section id="faq" style="padding-top:24px;padding-bottom:40px">
   <div class="wrap">
     <h2>Вопросы</h2>
     <div class="faq">
@@ -620,27 +617,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   </div>
 </section>
 
-<section id="contacts" style="padding-top:24px">
+<section id="contacts" class="contacts">
   <div class="wrap">
-    <div class="contact grid rise">
-      <div>
-        <h2>Записаться на курс</h2>
-        <p>Отвечу на вопросы о программе, датах и стоимости.</p>
-      </div>
-      <div class="clist">
-        <a href="https://t.me/ivan_swim" target="_blank" rel="noopener">
-          <span class="ci" style="background:var(--tg)"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.3 18.8 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L7 13.1l-4.6-1.4c-1-.3-1-1 .2-1.5L20.5 3.3c.8-.3 1.6.2 1.4 1Z"/></svg></span>
-          <span><small>Telegram</small><b>@ivan_swim</b></span>
-        </a>
-        <a href="tel:+79150801787">
-          <span class="ci" style="background:var(--accent)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span>
-          <span><small>Телефон</small><b>+7 915 080-17-87</b></span>
-        </a>
-        <a href="mailto:ivan.begin@gmail.com">
-          <span class="ci" style="background:#3a3d45"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
-          <span><small>Почта</small><b>ivan.begin@gmail.com</b></span>
-        </a>
-      </div>
+    <div class="lbl">Контакты</div>
+    <div class="clist">
+      <a href="https://t.me/ivan_swim" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.8 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L7 13.1l-4.6-1.4c-1-.3-1-1 .2-1.5L20.5 3.3c.8-.3 1.6.2 1.4 1Z"/></svg>
+        @ivan_swim
+      </a>
+      <a href="tel:+79150801787">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        +7 915 080-17-87
+      </a>
+      <a href="mailto:ivan.begin@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        ivan.begin@gmail.com
+      </a>
     </div>
   </div>
 </section>

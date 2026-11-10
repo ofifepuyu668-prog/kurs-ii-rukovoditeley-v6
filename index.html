@@ -327,6 +327,117 @@ body.locked{overflow:hidden}
   .brand span{display:none}
   .portrait .tgc{width:210px}
 }
+
+/* ---------- мобильная компактная вёрстка ---------- */
+@media (max-width:760px){
+  section{padding:38px 0}
+  h2{font-size:25px;line-height:1.15;margin-bottom:18px}
+  .hero{padding:12px 0 28px}
+  .hero h1{font-size:27px;line-height:1.12;letter-spacing:-.02em}
+  .hero .lead{font-size:15.5px;margin-top:12px}
+  .price{margin-top:16px;gap:8px 10px}
+  .price .now{font-size:27px}
+  .price .old{font-size:16px}
+  .price .off{font-size:12.5px;padding:3px 7px}
+  .price .start{font-size:13px;margin-top:2px}
+  .timer{padding:6px 11px;font-size:13px}
+  .btns{margin-top:16px;flex-direction:column;gap:8px}
+  .btns .btn{width:100%;justify-content:center;min-height:46px}
+  .portrait{display:flex;align-items:center;gap:12px;margin:18px 0 0;max-width:none}
+  .portrait .ph{width:72px;height:72px;flex:none;border-radius:50%;aspect-ratio:1}
+  .portrait .name{position:static;background:none;box-shadow:none;padding:0;font-size:14px;line-height:1.3}
+  .portrait .name b{font-size:15px}
+  .portrait .tgc{display:none}
+
+  .demo-q{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:14px}
+  .demo-q button{font-size:13px;line-height:1.25;min-height:44px;padding:6px 10px;border-radius:12px}
+  .demo{grid-template-columns:minmax(0,1fr);gap:12px}
+  .win.obs{display:none}
+  .term{font-size:13px;line-height:1.55}
+  .term .body{padding:13px 14px}
+  .ans .q{margin-bottom:8px}
+  .demo-note{font-size:12.5px;margin-top:10px}
+
+  .card{padding:16px}
+  .card h3{font-size:16.5px;margin-bottom:4px}
+  .card p{font-size:14px}
+  .who-c .ic{width:36px;height:36px;border-radius:10px;margin-bottom:12px}
+  .who-c .ic svg{width:18px;height:18px}
+  .cards{gap:10px}
+  .res{flex-direction:row;align-items:stretch;padding:0}
+  .res .pic{width:96px;flex:none;height:auto;min-height:96px;border-bottom:0;border-right:1px solid var(--line)}
+  .res .pic.logos{grid-template-columns:1fr 1fr;gap:6px;padding:10px}
+  .res .pic.logos img{width:26px;height:26px;border-radius:7px}
+  .res .pic.tgp{padding:10px}
+  .res .pic.tgp .bubble{font-size:9.5px;padding:6px 7px 3px}
+  .res .tx{padding:12px 14px}
+  .res .tx p{font-size:13.5px}
+
+  .tools{grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
+  .tool{flex-direction:row;align-items:center;gap:12px;min-height:0;padding:8px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:none}
+  .tool img,.tool .ic{width:28px;height:28px;border-radius:8px;flex:none}
+  .tool b{font-size:14.5px;line-height:1.2}
+  .tool span{font-size:12.5px;line-height:1.25;margin-top:1px}
+
+  .day{padding:16px 16px 14px}
+  .day .top{gap:8px;margin-bottom:8px}
+  .day h3{font-size:17px}
+  .day .dn{font-size:11.5px;padding:3px 7px}
+  .day .logos{margin-bottom:8px}
+  .day .logos img,.day .logos .wi{width:20px;height:20px;border-radius:5px}
+  .day ul{font-size:14px;margin:4px 0 10px;padding-left:16px}
+  .day .biz{font-size:13.5px;padding:9px 11px;margin-bottom:10px;border-radius:10px}
+  .day .hw{font-size:13.5px;padding-top:10px}
+
+  .tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:14px}
+  .tabs button{font-size:13.5px;min-height:44px;padding:0 10px;border-radius:10px}
+  .panel{padding:16px;gap:14px;border-radius:18px}
+  .panel h3{font-size:18px}
+  .panel p{font-size:14px}
+  .panel .vis.chat{padding:12px;max-width:none}
+  .panel .vis.chat .bubble{font-size:12.5px}
+  .panel .ex{font-size:12px;margin-top:8px}
+  .panel .vis.win{display:none}
+
+  .diff .card{gap:12px}
+  .diff .ck{width:24px;height:24px}
+  .diff .ck::after{width:8px;height:5px}
+
+  .prep{gap:0}
+  .prep .card{padding:12px 0;border:0;border-top:1px solid var(--line);border-radius:0;background:none}
+  .prep .card:first-child{border-top:0}
+  .prep .tag{margin-bottom:6px;font-size:11px;padding:2px 7px}
+  .prep .card h3{font-size:15.5px;margin-bottom:2px}
+  .prep li{font-size:13.5px;padding:6px 0;line-height:1.35}
+  .prep li b{font-size:13.5px}
+  .prep li span{font-size:12.5px;line-height:1.3}
+  .prep{grid-template-columns:minmax(0,1fr);gap:8px}
+
+  .teacher{padding:18px;border-radius:20px}
+  .teacher .ph{max-width:120px;border-radius:16px}
+  .teacher h2{font-size:22px}
+  .teacher p{font-size:14.5px}
+
+  .faq summary{font-size:15.5px;padding:15px 34px 15px 0}
+  .faq details p{font-size:14px;padding-bottom:16px}
+
+  .buy{padding:18px;border-radius:20px}
+  .buy .sub{font-size:14px;margin-bottom:14px}
+  .buy li{font-size:14px;padding:8px 0 8px 24px}
+  .buy .note{font-size:13px}
+  .contacts{padding:26px 0 30px}
+  .clist{gap:4px 20px}
+  .clist a{font-size:15.5px}
+  footer{padding:24px 0 34px;font-size:13px}
+  footer .wrap{gap:6px}
+}
+
+html{scroll-padding-top:64px}
+section{scroll-margin-top:64px}
+@media (max-width:760px){
+  html{scroll-snap-type:y proximity}
+  section,footer{scroll-snap-align:start}
+}
 </style>
 </head>
 <body>

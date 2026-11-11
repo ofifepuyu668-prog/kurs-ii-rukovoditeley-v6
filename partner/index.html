@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Практический курс ИИ для собственников и директоров - программа для учебных центров</title>
+<meta name="description" content="Авторская программа Ивана Бегина: 6 вечерних встреч, 20 академических часов. Слушатель уходит с работающей системой ИИ на своём ноутбуке. Для открытых и корпоративных групп учебных центров.">
+<meta name="robots" content="noindex, nofollow">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://kurs.whitefinancelab.ru/partner/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="White Finance Lab">
+<meta property="og:title" content="Практический курс ИИ для собственников и директоров">
+<meta property="og:description" content="Авторская практическая программа для собственников и директоров: 6 вечерних встреч, 20 академических часов, система ИИ на ноутбуке слушателя.">
+<meta property="og:url" content="https://kurs.whitefinancelab.ru/partner/">
+<meta property="og:image" content="https://kurs.whitefinancelab.ru/img/obsidian-800.webp">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+@font-face{font-family:'Onest';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/onest-normal-400-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Onest';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/onest-normal-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Onest';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/onest-normal-600-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Onest';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/onest-normal-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+:root{
+  --bg:#f5f3ee; --paper:#fffdf9; --ink:#16171a; --soft:#5b5d63; --line:#e3dfd6;
+  --accent:#d9822b; --accent-ink:#9a5513; --dark:#121316; --tg:#2aabee; --r:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-weight:600;letter-spacing:-.02em;margin:0}
+h2{font-size:clamp(28px,3.4vw,40px);line-height:1.12;margin-bottom:36px}
+h3{font-size:20px;line-height:1.25}
+p{margin:0}
+section{padding:88px 0}
+.grid>*{min-width:0}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:12px;font-weight:600;font-size:16px;text-decoration:none;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-main{background:var(--ink);color:#fff}
+.btn-main:hover{background:#2b2d33}
+.btn-ghost{border:1px solid var(--line);background:var(--paper)}
+
+/* шапка */
+header{position:sticky;top:0;z-index:20;background:rgba(245,243,238,.88);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.scrolled{border-bottom-color:var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;text-decoration:none;min-height:44px}
+.brand i{width:28px;height:28px;border-radius:8px;background:var(--ink);display:grid;place-items:center;font-style:normal;color:var(--accent);font-size:13px}
+nav{display:flex;gap:2px;align-items:center}
+nav a{text-decoration:none;font-size:15px;color:var(--soft);padding:10px 12px;border-radius:10px;min-height:44px;display:flex;align-items:center}
+nav a:hover{color:var(--ink);background:#ebe7de}
+nav a.cta{background:var(--ink);color:#fff;margin-left:8px;padding:10px 16px}
+nav a.cta:hover{background:#2b2d33}
+
+/* первый экран */
+.hero{padding:48px 0 64px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}
+.hero h1{font-size:clamp(34px,4.6vw,60px);line-height:1.04;letter-spacing:-.035em}
+.hero h1 em{font-style:normal;color:var(--accent-ink)}
+.hero .lead{font-size:19px;color:var(--soft);margin-top:22px;max-width:560px}
+.hero .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.portrait{position:relative;max-width:460px;justify-self:end;width:100%}
+.portrait .ph{border-radius:28px;overflow:hidden;aspect-ratio:1/1;background:#ddd}
+.portrait .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 8%}
+.portrait .name{position:absolute;left:18px;top:18px;background:rgba(255,253,249,.94);border-radius:14px;padding:10px 14px;font-size:14px;line-height:1.3;box-shadow:0 6px 20px -8px rgba(0,0,0,.25)}
+.portrait .name b{display:block;font-size:15.5px}
+.portrait .name span{color:var(--soft)}
+.portrait .tgc{position:absolute;left:-72px;bottom:-46px;width:270px}
+
+/* сообщение Telegram */
+.phone{background:#d9e6ee url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='4' cy='4' r='1.3' fill='%23c4d5df'/%3E%3C/svg%3E");border-radius:20px;padding:12px;box-shadow:0 24px 50px -18px rgba(20,20,30,.45);border:5px solid #111}
+.phone .who{display:flex;align-items:center;gap:10px;background:#fff;margin:-12px -12px 10px;padding:9px 12px;border-radius:15px 15px 0 0;font-size:14px}
+.phone .who img{width:28px;height:28px;border-radius:50%}
+.phone .who small{display:block;color:#7b8791;font-size:12px}
+.bubble{background:#fff;border-radius:14px 14px 14px 4px;padding:9px 12px 5px;font-size:13.5px;line-height:1.45;color:#111;box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.bubble+.bubble{margin-top:8px}
+.bubble.me{background:#e1f7cf;border-radius:14px 14px 4px 14px;margin-left:30px}
+.bubble b{font-weight:600}
+.bubble ul{margin:4px 0 4px;padding-left:16px}
+.bubble .t{text-align:right;color:#8a9aa6;font-size:11px}
+.bubble .au{font-weight:600;font-size:12.5px;color:#2a8ac6;display:block;margin-bottom:2px}
+
+/* демо */
+.demo-q{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.demo-q button{font:inherit;font-size:15.5px;min-height:46px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;transition:background .15s,border-color .15s}
+.demo-q button:hover{border-color:#cfc8ba}
+.demo-q button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.demo{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:22px;align-items:stretch}
+.win{background:#1e1e1e;border-radius:16px;overflow:hidden;border:1px solid #2b2b2b;box-shadow:0 30px 60px -24px rgba(20,20,30,.35)}
+.win .tb{height:36px;display:flex;align-items:center;gap:8px;padding:0 14px;background:#2a2a2c;color:#bdbdbd;font-size:13px}
+.win .tb s{width:11px;height:11px;border-radius:50%;display:inline-block}
+.win .tb s:nth-child(1){background:#ff5f57}.win .tb s:nth-child(2){background:#febc2e}.win .tb s:nth-child(3){background:#28c840}
+.win .tb span{margin-left:8px}
+.win.obs img{width:100%;height:100%;object-fit:cover;object-position:left top}
+.term{background:#0d0d0e;color:#ece7d8;font:14.5px/1.6 ui-monospace,'Cascadia Mono',Consolas,monospace;display:flex;flex-direction:column}
+.term .tb{background:#111;color:#e3b341}
+.term .body{padding:18px 20px 20px;flex:1;display:flex;flex-direction:column}
+.ans .q{color:#e3b341;margin-bottom:12px}
+.ans .q::before{content:"› ";}
+.ans p{white-space:pre-line}
+.ans .src{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+.ans .src span{font-size:12.5px;border:1px solid #3a3a3d;color:#b8b4a8;border-radius:6px;padding:2px 8px}
+.js .ans{display:none}
+.js .ans.on{display:block}
+.ans+.ans{margin-top:22px}
+.js .ans+.ans{margin-top:0}
+.demo-note{font-size:14px;color:var(--soft);margin-top:14px}
+
+/* карточки */
+.cards{display:grid;gap:18px}
+.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.card h3{font-size:19px;margin-bottom:8px}
+.card p{color:var(--soft);font-size:15.5px}
+.who-c .ic{width:44px;height:44px;border-radius:12px;background:#f3e2cf;color:var(--accent-ink);display:grid;place-items:center;margin-bottom:22px}
+.who-c .ic svg{width:22px;height:22px}
+
+.res{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.res .pic{height:180px;background:#1b1c20;overflow:hidden;position:relative;border-bottom:1px solid var(--line)}
+.res .pic img{width:100%;height:100%;object-fit:cover;object-position:left top}
+.res .pic.logos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:22px;background:#f0ece3;align-content:center}
+.res .pic.logos img{width:44px;height:44px;border-radius:11px;justify-self:center}
+.res .pic.tgp{background:#d9e6ee;padding:18px}
+.res .pic.tgp .bubble{font-size:12.5px}
+.res .tx{padding:20px 22px 24px}
+.res .n{font-size:13px;color:var(--accent-ink);font-weight:600;display:block;margin-bottom:6px}
+
+/* инструменты */
+.tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.tool{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:136px}
+.tool img{width:40px;height:40px;border-radius:10px;object-fit:cover}
+.tool .ic{width:40px;height:40px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:600}
+.tool div{min-width:0}
+.tool b{font-weight:600;font-size:15.5px;display:block}
+.tool span{font-size:13.5px;color:var(--soft);line-height:1.35}
+
+/* программа */
+.dark{background:var(--dark);color:#f1efe9}
+.days{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.day{background:#1b1c20;border:1px solid #2a2b31;border-radius:var(--r);padding:26px 26px 22px;display:flex;flex-direction:column}
+.day .top{display:flex;align-items:baseline;gap:14px;margin-bottom:12px}
+.day .dn{font-size:13px;font-weight:600;color:#121316;background:#f0a65a;border-radius:8px;padding:4px 9px;white-space:nowrap}
+.day h3{color:#fff}
+.day .logos{display:flex;gap:6px;margin:0 0 14px}
+.day .logos img,.day .logos .wi{width:26px;height:26px;border-radius:7px}
+.day .logos .wi{background:#fff;color:#111;display:grid;place-items:center;font-size:12px;font-weight:600}
+.day ul{margin:6px 0 14px;padding-left:18px;color:#c9cbd1;font-size:15.5px}
+.day ul li{margin:4px 0}
+.day .biz{background:#23252b;border-radius:12px;padding:12px 14px;font-size:15px;color:#f1efe9;margin-bottom:14px}
+.day .biz b{color:#f0a65a;font-weight:600}
+.day .hw{margin-top:auto;border-top:1px dashed #3a3b42;padding-top:14px;font-size:15px;color:#e8e6e0}
+.day .hw b{color:#f0a65a;font-weight:600;display:block;font-size:13px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+
+/* как проходит */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tabs button{font:inherit;font-size:15.5px;font-weight:600;min-height:46px;padding:0 18px;border-radius:12px;border:1px solid var(--line);background:var(--paper);color:var(--soft);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.panel{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:36px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:32px}
+.panel+.panel{margin-top:18px}
+.js .panel{display:none}
+.js .panel.on{display:grid}
+.js .panel+.panel{margin-top:0}
+.panel h3{font-size:24px;margin-bottom:10px}
+.panel p{color:var(--soft)}
+.panel .vis{border-radius:16px;overflow:hidden}
+.panel .vis.chat{background:#d9e6ee url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='4' cy='4' r='1.3' fill='%23c4d5df'/%3E%3C/svg%3E");padding:20px;max-width:460px}
+.panel .vis.chat .bubble{font-size:14.5px;max-width:92%}
+.panel .vis.chat .bubble.me{margin-left:auto}
+.panel .ex{font-size:13px;color:var(--soft);margin-top:12px}
+
+/* отличия */
+.diff .card{display:flex;gap:16px;align-items:flex-start}
+.diff .ck{flex:none;width:28px;height:28px;border-radius:50%;background:var(--ink);display:grid;place-items:center;margin-top:2px}
+.diff .ck::after{content:"";width:10px;height:6px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:translate(0,-1px) rotate(-45deg)}
+
+/* подготовка */
+.prep .tag{display:inline-block;font-size:12.5px;font-weight:600;border-radius:6px;padding:3px 8px;margin-bottom:14px;background:#f3e2cf;color:var(--accent-ink)}
+.prep .tag.opt{background:#e7ebef;color:#46525e}
+.prep ul{list-style:none;margin:0;padding:0}
+.prep li{padding:10px 0;border-top:1px solid var(--line);font-size:15.5px}
+.prep li:first-child{border-top:0;padding-top:0}
+.prep li b{display:block;font-weight:600}
+.prep li span{color:var(--soft);font-size:14.5px}
+
+/* преподаватель */
+.teacher{display:grid;grid-template-columns:260px minmax(0,1fr);gap:44px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:36px}
+.teacher .ph{border-radius:22px;overflow:hidden;aspect-ratio:1/1}
+.teacher .ph img{width:100%;height:100%;object-fit:cover}
+.teacher h2{margin-bottom:4px}
+.teacher .role{color:var(--accent-ink);font-weight:600;margin-bottom:16px}
+.teacher p{color:var(--soft);max-width:680px}
+.teacher p+p{margin-top:10px}
+
+/* вопросы */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;font-weight:600;font-size:17.5px;position:relative;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:16px;font-size:24px;font-weight:400;color:var(--accent-ink);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 20px;color:var(--soft);max-width:760px}
+
+/* цена и таймер */
+.price{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.price .now{font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1}
+.price .now s{display:none}
+.price .old{font-size:19px;color:#9a958b;text-decoration:line-through;text-decoration-thickness:1.5px}
+.price .off{font-size:13.5px;font-weight:600;background:var(--accent);color:#fff;border-radius:7px;padding:4px 8px;letter-spacing:.02em}
+.price .start{font-size:14.5px;color:var(--soft);width:100%}
+.timer{display:inline-flex;align-items:center;gap:8px;border:1px solid #e8d3ba;background:#fdf3e7;border-radius:999px;padding:7px 14px;font-size:14.5px;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.timer svg{width:16px;height:16px;flex:none}
+.timer b{font-weight:600;letter-spacing:.02em}
+.timer.off{border-color:var(--line);background:#efece5;color:var(--soft)}
+.timer .lbl{color:var(--soft)}
+
+/* стоимость */
+.buy{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:40px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:36px}
+.buy h2{margin-bottom:6px}
+.buy .sub{color:var(--soft);margin-bottom:20px}
+.buy ul{list-style:none;margin:0;padding:0}
+.buy li{padding:9px 0 9px 28px;position:relative;border-top:1px solid var(--line);font-size:15.5px}
+.buy li:first-child{border-top:0}
+.buy li::before{content:"";position:absolute;left:2px;top:16px;width:12px;height:7px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.buy .price{margin-top:0}
+.buy .note{font-size:14px;color:var(--soft);margin-top:16px}
+
+/* мобильная полоса */
+.stockbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;align-items:center;gap:12px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,253,249,.97);backdrop-filter:blur(10px);border-top:1px solid var(--line);box-shadow:0 -8px 24px -18px rgba(0,0,0,.4)}
+.stockbar .p{line-height:1.15}
+.stockbar .p b{font-size:19px;font-weight:600;display:block}
+.stockbar .p s{font-size:12.5px;color:var(--soft)}
+.stockbar .btn{margin-left:auto;min-height:44px;padding:0 16px;font-size:15px}
+.stockbar .timer{padding:5px 10px;font-size:13px;border-radius:8px}
+@media (max-width:760px){
+  .stockbar{display:flex}
+  body{padding-bottom:72px}
+  .buy{padding:24px;grid-template-columns:minmax(0,1fr)}
+  .price .now{font-size:30px}
+}
+@media (max-width:1020px){.buy{grid-template-columns:minmax(0,1fr);gap:26px}}
+
+/* контакты */
+.contacts{padding:34px 0 40px;border-top:1px solid var(--line)}
+.contacts .lbl{font-size:15px;font-weight:600;margin-bottom:14px}
+.clist{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center}
+.clist a{display:inline-flex;align-items:center;gap:9px;min-height:44px;font-size:17px;text-decoration:none;color:var(--ink);border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.clist a:hover,.clist a:focus-visible{color:var(--accent-ink);border-bottom-color:var(--accent-ink)}
+.clist a:focus-visible{outline:none}
+.clist svg{width:18px;height:18px;flex:none;color:var(--soft);transition:color .15s}
+.clist a:hover svg{color:var(--accent-ink)}
+
+footer{padding:36px 0 52px;color:var(--soft);font-size:14.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+/* модалка записи */
+.modal{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal .ov{position:absolute;inset:0;background:rgba(18,19,22,.55);backdrop-filter:blur(3px)}
+.sheet{position:relative;background:var(--paper);border-radius:24px;width:100%;max-width:460px;padding:28px;box-shadow:0 40px 80px -30px rgba(0,0,0,.5);animation:up .22s ease}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.sheet{animation:none}}
+.sheet .x{position:absolute;right:14px;top:14px;width:44px;height:44px;border:0;background:transparent;border-radius:12px;cursor:pointer;color:var(--soft);display:grid;place-items:center}
+.sheet .x:hover{background:#efece5;color:var(--ink)}
+.sheet .x svg{width:20px;height:20px}
+.sheet h3{font-size:24px;margin-bottom:18px;padding-right:40px}
+.sheet .sm{font-size:14.5px;color:var(--soft);margin-bottom:18px}
+.sheet .pr{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.sheet .pr b{font-size:26px;font-weight:600}
+.sheet .pr s{color:#9a958b;font-size:16px}
+.sheet .pr .tm{font-size:13px;color:var(--accent-ink);background:#fdf3e7;border:1px solid #e8d3ba;border-radius:999px;padding:4px 10px;font-variant-numeric:tabular-nums}
+.links{display:grid;gap:10px}
+.links a{display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;min-height:64px;transition:border-color .15s,background .15s}
+.links a:hover{border-color:#cfc8ba;background:#fbf8f2}
+.links a.pri{background:var(--tg);border-color:var(--tg);color:#fff}
+.links a.pri:hover{background:#1e9fe0;border-color:#1e9fe0}
+.links .ic{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex:none;background:#f1ede4;color:var(--ink)}
+.links a.pri .ic{background:rgba(255,255,255,.2);color:#fff}
+.links .ic svg{width:20px;height:20px}
+.links b{font-weight:600;font-size:16.5px;display:block}
+.links small{color:var(--soft);font-size:13.5px}
+.links a.pri small{color:rgba(255,255,255,.85)}
+.sheet .foot{font-size:13.5px;color:var(--soft);margin-top:16px}
+body.locked{overflow:hidden}
+@media (max-width:600px){
+  .modal{padding:0;align-items:flex-end}
+  .sheet{border-radius:22px 22px 0 0;max-width:none;padding:24px 20px calc(20px + env(safe-area-inset-bottom))}
+  .sheet h3{font-size:21px}
+}
+
+/* появление */
+.js .rise{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rise{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.btn{transition:none}}
+
+@media (max-width:1020px){
+  .c4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .c3,.prep{grid-template-columns:minmax(0,1fr)}
+  .demo,.panel,.contact{grid-template-columns:minmax(0,1fr)}
+  .win.obs{max-height:360px}
+}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+  .portrait{justify-self:start;max-width:420px}
+  .portrait .tgc{position:relative;left:auto;right:auto;bottom:auto;margin:-44px 0 0 auto;width:250px}
+  .teacher{grid-template-columns:minmax(0,1fr);gap:24px;padding:24px}
+  .teacher .ph{max-width:220px}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  section{padding:60px 0}
+  h2{margin-bottom:26px}
+  .wrap{padding:0 18px}
+  nav a.hide-m{display:none}
+  .hero{padding-top:28px}
+  .days,.c4{grid-template-columns:minmax(0,1fr)}
+  .tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .panel{padding:22px;gap:22px}
+  .contact{padding:26px}
+  .win.obs{max-height:240px}
+  .term{font-size:13.5px}
+  .portrait{margin-bottom:8px}
+  .portrait .tgc{width:230px;margin:-40px 0 0 auto}
+}
+@media (max-width:400px){
+  nav a{padding:10px 8px;font-size:14px}
+  nav a.cta{margin-left:4px;padding:10px 12px}
+  .brand span{display:none}
+  .portrait .tgc{width:210px}
+}
+
+/* ---------- мобильная компактная вёрстка ---------- */
+@media (max-width:760px){
+  section{padding:38px 0}
+  h2{font-size:25px;line-height:1.15;margin-bottom:18px}
+  .hero{padding:12px 0 28px}
+  .hero h1{font-size:27px;line-height:1.12;letter-spacing:-.02em}
+  .hero .lead{font-size:15.5px;margin-top:12px}
+  .price{margin-top:16px;gap:8px 10px}
+  .price .now{font-size:27px}
+  .price .old{font-size:16px}
+  .price .off{font-size:12.5px;padding:3px 7px}
+  .price .start{font-size:13px;margin-top:2px}
+  .timer{padding:6px 11px;font-size:13px}
+  .btns{margin-top:16px;flex-direction:column;gap:8px}
+  .btns .btn{width:100%;justify-content:center;min-height:46px}
+  .portrait{display:flex;align-items:center;gap:12px;margin:18px 0 0;max-width:none}
+  .portrait .ph{width:72px;height:72px;flex:none;border-radius:50%;aspect-ratio:1}
+  .portrait .name{position:static;background:none;box-shadow:none;padding:0;font-size:14px;line-height:1.3}
+  .portrait .name b{font-size:15px}
+  .portrait .tgc{display:none}
+
+  .demo-q{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:14px}
+  .demo-q button{font-size:13px;line-height:1.25;min-height:44px;padding:6px 10px;border-radius:12px}
+  .demo{grid-template-columns:minmax(0,1fr);gap:12px}
+  .win.obs{display:none}
+  .term{font-size:13px;line-height:1.55}
+  .term .body{padding:13px 14px}
+  .ans .q{margin-bottom:8px}
+  .demo-note{font-size:12.5px;margin-top:10px}
+
+  .card{padding:16px}
+  .card h3{font-size:16.5px;margin-bottom:4px}
+  .card p{font-size:14px}
+  .who-c .ic{width:36px;height:36px;border-radius:10px;margin-bottom:12px}
+  .who-c .ic svg{width:18px;height:18px}
+  .cards{gap:10px}
+  .res{flex-direction:row;align-items:stretch;padding:0}
+  .res .pic{width:96px;flex:none;height:auto;min-height:96px;border-bottom:0;border-right:1px solid var(--line)}
+  .res .pic.logos{grid-template-columns:1fr 1fr;gap:6px;padding:10px}
+  .res .pic.logos img{width:26px;height:26px;border-radius:7px}
+  .res .pic.tgp{padding:10px}
+  .res .pic.tgp .bubble{font-size:9.5px;padding:6px 7px 3px}
+  .res .tx{padding:12px 14px}
+  .res .tx p{font-size:13.5px}
+
+  .tools{grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
+  .tool{flex-direction:row;align-items:center;gap:12px;min-height:0;padding:8px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:none}
+  .tool img,.tool .ic{width:28px;height:28px;border-radius:8px;flex:none}
+  .tool b{font-size:14.5px;line-height:1.2}
+  .tool span{font-size:12.5px;line-height:1.25;margin-top:1px}
+
+  .day{padding:16px 16px 14px}
+  .day .top{gap:8px;margin-bottom:8px}
+  .day h3{font-size:17px}
+  .day .dn{font-size:11.5px;padding:3px 7px}
+  .day .logos{margin-bottom:8px}
+  .day .logos img,.day .logos .wi{width:20px;height:20px;border-radius:5px}
+  .day ul{font-size:14px;margin:4px 0 10px;padding-left:16px}
+  .day .biz{font-size:13.5px;padding:9px 11px;margin-bottom:10px;border-radius:10px}
+  .day .hw{font-size:13.5px;padding-top:10px}
+
+  .tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:14px}
+  .tabs button{font-size:13.5px;min-height:44px;padding:0 10px;border-radius:10px}
+  .panel{padding:16px;gap:14px;border-radius:18px}
+  .panel h3{font-size:18px}
+  .panel p{font-size:14px}
+  .panel .vis.chat{padding:12px;max-width:none}
+  .panel .vis.chat .bubble{font-size:12.5px}
+  .panel .ex{font-size:12px;margin-top:8px}
+  .panel .vis.win{display:none}
+
+  .diff .card{gap:12px}
+  .diff .ck{width:24px;height:24px}
+  .diff .ck::after{width:8px;height:5px}
+
+  .prep{gap:0}
+  .prep .card{padding:12px 0;border:0;border-top:1px solid var(--line);border-radius:0;background:none}
+  .prep .card:first-child{border-top:0}
+  .prep .tag{margin-bottom:6px;font-size:11px;padding:2px 7px}
+  .prep .card h3{font-size:15.5px;margin-bottom:2px}
+  .prep li{font-size:13.5px;padding:6px 0;line-height:1.35}
+  .prep li b{font-size:13.5px}
+  .prep li span{font-size:12.5px;line-height:1.3}
+  .prep{grid-template-columns:minmax(0,1fr);gap:8px}
+
+  .teacher{padding:18px;border-radius:20px}
+  .teacher .ph{max-width:120px;border-radius:16px}
+  .teacher h2{font-size:22px}
+  .teacher p{font-size:14.5px}
+
+  .faq summary{font-size:15.5px;padding:15px 34px 15px 0}
+  .faq details p{font-size:14px;padding-bottom:16px}
+
+  .buy{padding:18px;border-radius:20px}
+  .buy .sub{font-size:14px;margin-bottom:14px}
+  .buy li{font-size:14px;padding:8px 0 8px 24px}
+  .buy .note{font-size:13px}
+  .contacts{padding:26px 0 30px}
+  .clist{gap:4px 20px}
+  .clist a{font-size:15.5px}
+  footer{padding:24px 0 34px;font-size:13px}
+  footer .wrap{gap:6px}
+}
+
+html{scroll-padding-top:64px}
+section{scroll-margin-top:64px}
+@media (max-width:760px){
+  html{scroll-snap-type:y proximity}
+  section,footer{scroll-snap-align:start}
+}
+</style>
+<style>
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 4px;padding:0;list-style:none}
+.facts li{border:1px solid rgba(0,0,0,.12);border-radius:999px;padding:8px 14px;font-size:15px;background:rgba(255,255,255,.6)}
+.facts li b{font-weight:600}
+.give{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.give .card ul{margin:10px 0 0;padding-left:18px}.give .card li{margin:6px 0}
+@media (max-width:760px){.give{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top"><i>ИИ</i><span>Программа для учебных центров</span></a>
+    <nav>
+      <a href="#program">Программа</a>
+      <a class="hide-m" href="#partner">Сотрудничество</a>
+      <a class="cta" href="#contacts">Обсудить</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Практический курс ИИ для&nbsp;собственников и&nbsp;директоров: <em>система работает к&nbsp;концу недели</em></h1>
+      <p class="lead">Авторская программа для запуска под брендом учебного центра. К концу недели у слушателя на ноутбуке работает своя система: база знаний о компании, утренняя сводка в Telegram и бот-консультант по ценам и регламентам.</p>
+      <ul class="facts">
+        <li><b>6 встреч</b> по 2,5 часа</li>
+        <li><b>20</b> академических часов</li>
+        <li>группа <b>до 10</b> человек</li>
+        <li>открытая или <b>корпоративная</b> группа</li>
+        <li>онлайн или очно</li>
+      </ul>
+      <div class="btns">
+        <a class="btn btn-main" href="#contacts">Обсудить запуск</a>
+        <a class="btn btn-ghost" href="#program">Программа по дням</a>
+      </div>
+    </div>
+    <div class="portrait rise">
+      <div class="ph">
+        <picture>
+          <source media="(max-width:760px)" srcset="/img/ivan-480.webp">
+          <img src="/img/ivan-900.webp" width="900" height="900" alt="Иван Бегин, автор программы">
+        </picture>
+      </div>
+      <div class="name"><b>Иван Бегин</b><span>автор и преподаватель программы</span></div>
+      <div class="tgc">
+        <div class="phone">
+          <div class="who"><img src="/img/logo-telegram.png" alt=""><div>Мой помощник<small>бот</small></div></div>
+          <div class="bubble">
+            <b>Сводка на утро</b>
+            <ul>
+              <li>Павел: график цеха до 11.11</li>
+              <li>У Ольги КП для школы без срока</li>
+              <li>По поставщику решения нет</li>
+            </ul>
+            <div class="t">08:30</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="demo" style="padding-top:40px">
+  <div class="wrap">
+    <h2>Спросите память компании</h2>
+    <div class="demo-q" role="group" aria-label="Вопросы к базе">
+      <button type="button" data-a="burn" aria-pressed="true">Что горит на этой неделе?</button>
+      <button type="button" data-a="price" aria-pressed="false">Сколько стоит окно с монтажом?</button>
+      <button type="button" data-a="supplier" aria-pressed="false">Что решили с поставщиком?</button>
+      <button type="button" data-a="nodate" aria-pressed="false">У кого задачи без срока?</button>
+    </div>
+    <div class="demo grid">
+      <div class="win obs rise">
+        <picture>
+          <source media="(max-width:760px)" srcset="/img/obsidian-800.webp">
+          <img src="/img/obsidian-1600.webp" width="1600" height="945" alt="Obsidian: память компании, задачи недели и связи между заметками">
+        </picture>
+      </div>
+      <div class="win term rise" aria-live="polite">
+        <div class="tb"><s></s><s></s><s></s><span>Hermes Agent</span></div>
+        <div class="body">
+          <div class="ans on" id="a-burn">
+            <div class="q">Что горит на этой неделе?</div>
+            <p>Самое срочное: Павел до 11.11 делает график цеха под ЖК «Берёзовая роща».
+До 12.11 Артём сравнивает два предложения по профилю. У нового поставщика цена на 7% ниже, но поставка 10 дней против 6, решение пока не принято.
+У Ольги КП для школы № 17 без срока. Когда его сдавать, в заметках не написано.
+Акт сверки с поставщиком стекла Марина уже закрыла.</p>
+            <div class="src"><span>Задачи недели</span><span>Встреча 04.11 - планёрка</span><span>Встреча 06.11 - поставщик профиля</span></div>
+          </div>
+          <div class="ans" id="a-price">
+            <div class="q">Сколько стоит окно 1300x1400 с монтажом под ключ?</div>
+            <p>Окно 1300x1400 (двухкамерное) с монтажом под ключ обойдётся в 23 600 ₽: само окно 18 700 ₽, монтаж под ключ 4 900 ₽.
+Замер бесплатный. Скидки может согласовать только директор.
+Что входит в монтаж под ключ (откосы, подоконник, отлив, демонтаж старого окна) и сколько стоит доставка, в заметках не сказано.</p>
+            <div class="src"><span>Цены и услуги</span></div>
+          </div>
+          <div class="ans" id="a-supplier">
+            <div class="q">Что решили с новым поставщиком профиля?</div>
+            <p>Решения пока нет. На встрече 06.11 договорились, что Артём Лебедев из снабжения сравнит два предложения до 12.11.
+У нового поставщика цена на 7% ниже и отсрочка 30 дней, но поставка занимает 10 дней, а у текущего 6.
+В «Целях на квартал» переход на нового поставщика записан как цель, но это не решение: во встрече прямо сказано «решение не принято». Итога сравнения в заметках нет.</p>
+            <div class="src"><span>Встреча 06.11 - поставщик профиля</span><span>Задачи недели</span><span>Цели на квартал</span><span>Команда</span></div>
+          </div>
+          <div class="ans" id="a-nodate">
+            <div class="q">У кого задачи без срока?</div>
+            <p>Открытая задача без срока одна: у Ольги, КП для школы № 17. В «Задачах недели» написано «срок не указан», на планёрке 04.11 тоже сказали только «Ольга готовит».
+У Марины (акт сверки с поставщиком стекла) срок тоже не указан, но задача уже отмечена выполненной.
+У остальных сроки есть: Павел до 11.11, Артём до 12.11.</p>
+            <div class="src"><span>Задачи недели</span><span>Встреча 04.11 - планёрка</span><span>Встреча 06.11 - поставщик профиля</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Настоящие ответы агента Hermes Agent (Nous Research) по учебной базе вымышленной компании «Тёплый дом». Такую базу о своей компании вы соберёте на третьей встрече.</p>
+  </div>
+</section>
+
+<section id="who" style="padding-top:40px">
+  <div class="wrap">
+    <h2>Кому подойдёт</h2>
+    <div class="cards c3 grid">
+      <div class="card who-c rise">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
+        <h3>Собственнику бизнеса</h3>
+        <p>Сами понимаете, что ИИ может сделать в вашей компании, и не зависите от обещаний подрядчиков.</p>
+      </div>
+      <div class="card who-c rise">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div>
+        <h3>Генеральному директору</h3>
+        <p>Сводки, протоколы и ответы по компании без ручного сбора у сотрудников.</p>
+      </div>
+      <div class="card who-c rise">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3>Финансовому и коммерческому директору</h3>
+        <p>Отчёты, письма, разбор документов и цены под рукой, с проверкой, откуда взята каждая цифра.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="result" style="padding-top:40px">
+  <div class="wrap">
+    <h2>Результат курса</h2>
+    <div class="cards c4 grid">
+      <div class="card res rise">
+        <div class="pic logos"><img src="/img/logo-hermes.png" alt="Hermes Agent"><img src="/img/logo-claude.png" alt="Claude"><img src="/img/logo-deepseek.png" alt="DeepSeek"><img src="/img/logo-keepassxc.png" alt="KeePassXC"></div>
+        <div class="tx"><span class="n">01</span><h3>Рабочее место с ИИ</h3><p>Hermes Agent и выбранные модели установлены, подписки оформлены на вас. Пароли и ключи в одном сейфе.</p></div>
+      </div>
+      <div class="card res rise">
+        <div class="pic"><img src="/img/notes-800.webp" width="800" height="427" alt="Заметки памяти компании в Obsidian"></div>
+        <div class="tx"><span class="n">02</span><h3>Память компании</h3><p>Клиенты, цены, команда и задачи в одной базе. ИИ отвечает по ней, а не из головы.</p></div>
+      </div>
+      <div class="card res rise">
+        <div class="pic tgp"><div class="bubble"><b>Сводка на утро</b><br>Павел: график цеха до 11.11<br>У Ольги КП без срока<div class="t">08:30</div></div></div>
+        <div class="tx"><span class="n">03</span><h3>Помощник в Telegram</h3><p>Сам присылает сводки и напоминания по расписанию. Ему можно написать с телефона.</p></div>
+      </div>
+      <div class="card res rise">
+        <div class="pic"><img src="/img/hermes-800.webp" width="800" height="365" alt="Ответ Hermes Agent по базе компании" style="background:#0c0c0c"></div>
+        <div class="tx"><span class="n">04</span><h3>Первый продукт на ИИ</h3><p>Один-два рабочих инструмента под ваши задачи, которые вы умеете менять сами.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tools" style="padding-top:40px">
+  <div class="wrap">
+    <h2>Инструменты</h2>
+    <div class="tools grid">
+      <div class="tool rise"><img src="/img/logo-hermes.png" alt=""><div><b>Hermes Agent</b><span>открытый агент от Nous Research: работает с файлами, почтой, Telegram</span></div></div>
+      <div class="tool rise"><img src="/img/logo-claude.png" alt=""><div><b>Claude</b><span>сильная модель для текстов и анализа</span></div></div>
+      <div class="tool rise"><img src="/img/logo-chatgpt.png" alt=""><div><b>ChatGPT</b><span>по желанию, на условиях сервиса</span></div></div>
+      <div class="tool rise"><img src="/img/logo-deepseek.png" alt=""><div><b>DeepSeek</b><span>недорогая модель для массовых задач</span></div></div>
+      <div class="tool rise"><img src="/img/logo-kimi.png" alt=""><div><b>Kimi</b><span>модель для длинных документов</span></div></div>
+      <div class="tool rise"><img src="/img/logo-perplexity.png" alt=""><div><b>Perplexity</b><span>поиск в интернете с источниками</span></div></div>
+      <div class="tool rise"><img src="/img/logo-obsidian.png" alt=""><div><b>Obsidian</b><span>память компании: база знаний о бизнесе</span></div></div>
+      <div class="tool rise"><img src="/img/logo-telegram.png" alt=""><div><b>Telegram</b><span>помощник в телефоне: бот и приложение</span></div></div>
+      <div class="tool rise"><div class="ic">W</div><div><b>Whisper</b><span>голосовое и запись встречи в текст</span></div></div>
+      <div class="tool rise"><img src="/img/logo-ollama.png" alt=""><div><b>Российские и локальные модели</b><span>GigaChat, YandexGPT или ИИ на ноутбуке: данные не уходят за рубеж</span></div></div>
+      <div class="tool rise"><img src="/img/logo-keepassxc.png" alt=""><div><b>KeePassXC</b><span>сейф для паролей и ключей</span></div></div>
+      <div class="tool rise"><img src="/img/logo-github.png" alt=""><div><b>GitHub и Docker</b><span>хранение и запуск ваших инструментов</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="program">
+  <div class="wrap">
+    <h2>Программа</h2>
+    <div class="days grid">
+      <article class="day rise">
+        <div class="top"><span class="dn">День 1</span><h3>Ставим рабочее место</h3></div>
+        <div class="logos"><img src="/img/logo-hermes.png" alt="Hermes Agent"><img src="/img/logo-keepassxc.png" alt="KeePassXC"><img src="/img/logo-github.png" alt="GitHub"><img src="/img/logo-docker.png" alt="Docker"></div>
+        <ul>
+          <li>Устанавливаем Hermes Agent, проверяем доступ к выбранным моделям</li>
+          <li>KeePassXC: все пароли и ключи в одном сейфе</li>
+          <li>GitHub и Docker, первый разговор с агентом</li>
+        </ul>
+        <div class="biz"><b>В компании:</b> доступы и ключи лежат в сейфе, а не в переписке и на стикерах.</div>
+        <div class="hw"><b>Домашнее задание</b>Hermes Agent отвечает на ваш вопрос, все входы и ключи сохранены в KeePassXC.</div>
+      </article>
+      <article class="day rise">
+        <div class="top"><span class="dn">День 2</span><h3>Модели и подписки</h3></div>
+        <div class="logos"><img src="/img/logo-claude.png" alt="Claude"><img src="/img/logo-chatgpt.png" alt="ChatGPT"><img src="/img/logo-deepseek.png" alt="DeepSeek"><img src="/img/logo-kimi.png" alt="Kimi"><img src="/img/logo-perplexity.png" alt="Perplexity"><img src="/img/logo-ollama.png" alt="Ollama"></div>
+        <ul>
+          <li>Claude, ChatGPT, DeepSeek, Kimi, Perplexity, GigaChat, YandexGPT и локальные модели: что для чего и за что платить</li>
+          <li>Безопасность: какие данные компании нельзя отдавать в ИИ и что проверить в условиях сервиса</li>
+          <li>Локальная модель на своём компьютере</li>
+          <li>Whisper: голос и записи в текст</li>
+        </ul>
+        <div class="biz"><b>В компании:</b> вы знаете, за какую модель платить и сколько, без лишних подписок.</div>
+        <div class="hw"><b>Домашнее задание</b>Одна задача из вашей работы в трёх моделях. Выбрать основную и поставить лимит расходов.</div>
+      </article>
+      <article class="day rise">
+        <div class="top"><span class="dn">День 3</span><h3>Память компании</h3></div>
+        <div class="logos"><img src="/img/logo-obsidian.png" alt="Obsidian"><img src="/img/logo-hermes.png" alt="Hermes Agent"></div>
+        <ul>
+          <li>Obsidian и структура базы знаний о бизнесе</li>
+          <li>Hermes Agent читает базу и отвечает со ссылками</li>
+          <li>Что хранить в базе, а что нет</li>
+        </ul>
+        <div class="biz"><b>В компании:</b> знания не уходят вместе с сотрудником, ответ на вопрос за секунды.</div>
+        <div class="hw"><b>Домашнее задание</b>10-15 заметок о своей компании: цели, клиенты, цены, команда.</div>
+      </article>
+      <article class="day rise">
+        <div class="top"><span class="dn">День 4</span><h3>Telegram и расписание</h3></div>
+        <div class="logos"><img src="/img/logo-telegram.png" alt="Telegram"><img src="/img/logo-hermes.png" alt="Hermes Agent"></div>
+        <ul>
+          <li>Подключаем Hermes Agent к Telegram: через бота и через приложение</li>
+          <li>Задачи по расписанию: утренняя сводка в 08:30</li>
+          <li>Как проверить и остановить задачу</li>
+        </ul>
+        <div class="biz"><b>В компании:</b> утром не собираете, кто что должен: сводка приходит сама.</div>
+        <div class="hw"><b>Домашнее задание</b>Три утра подряд сводка приходит сама.</div>
+      </article>
+      <article class="day rise">
+        <div class="top"><span class="dn">День 5</span><h3>Первый продукт</h3></div>
+        <div class="logos"><img src="/img/logo-telegram.png" alt="Telegram"><img src="/img/logo-obsidian.png" alt="Obsidian"><img src="/img/logo-hermes.png" alt="Hermes Agent"></div>
+        <ul>
+          <li>Бот-консультант: отвечает клиентам или сотрудникам по вашей базе</li>
+          <li>Цены, условия, регламенты, без выдумок</li>
+          <li>Что делать, если бот не знает ответа</li>
+        </ul>
+        <div class="biz"><b>В компании:</b> менеджеры и клиенты получают ответы по ценам и условиям без вашего участия.</div>
+        <div class="hw"><b>Домашнее задание</b>Задать боту 20 настоящих вопросов и поправить базу там, где он ошибся.</div>
+      </article>
+      <article class="day rise">
+        <div class="top"><span class="dn">День 6</span><h3>Второй продукт и защита</h3></div>
+        <div class="logos"><span class="wi">W</span><img src="/img/logo-hermes.png" alt="Hermes Agent"><img src="/img/logo-telegram.png" alt="Telegram"></div>
+        <ul>
+          <li>На выбор: запись совещания в протокол и задачи, ответы на отзывы или своя задача</li>
+          <li>Каждый показывает свою систему в работе</li>
+          <li>Вручение сертификатов</li>
+        </ul>
+        <div class="biz"><b>В компании:</b> после совещания сразу есть протокол и список задач с ответственными.</div>
+        <div class="hw"><b>Дальше</b>Неделя поддержки: вопросы в чате группы, разбор того, что не получилось.</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>Как проходит обучение</h2>
+    <div class="tabs" role="tablist" aria-label="Формат обучения">
+      <button type="button" role="tab" aria-selected="true" aria-controls="p-meet" id="t-meet">Встреча</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="p-home" id="t-home">Домашнее задание</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="p-chat" id="t-chat">Чат группы</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="p-after" id="t-after">После курса</button>
+    </div>
+    <div class="panel on grid" role="tabpanel" id="p-meet" aria-labelledby="t-meet">
+      <div><h3>Вечером после 19:00</h3><p>6 встреч за неделю. Преподаватель показывает на своём экране, вы повторяете на своём ноутбуке. Каждая встреча заканчивается проверяемым результатом: агент ответил на ваш вопрос, база собрана, сводка пришла.</p></div>
+      <div class="vis win"><div class="tb" style="background:#111"><s></s><s></s><s></s><span>Hermes Agent</span></div><img src="/img/hermes-800.webp" width="800" height="365" alt="Hermes Agent на экране преподавателя" style="background:#0c0c0c"></div>
+    </div>
+    <div class="panel grid" role="tabpanel" id="p-home" aria-labelledby="t-home">
+      <div><h3>Короткое и на своих задачах</h3><p>Продолжаете то, что начали на встрече, но уже на данных своей компании. Результат показываете в чате группы.</p></div>
+      <div class="vis win"><img src="/img/notes-800.webp" width="800" height="427" alt="Заметки в Obsidian"></div>
+    </div>
+    <div class="panel grid" role="tabpanel" id="p-chat" aria-labelledby="t-chat">
+      <div><h3>Вопросы по ходу, а не через день</h3><p>Вся группа в одном чате Telegram. Застряли дома - пишете, преподаватель отвечает и разбирает по скриншоту.</p></div>
+      <div>
+        <div class="vis chat">
+          <div class="bubble"><span class="au">Участник</span>Сводка пришла, но без задач снабжения. Где смотреть?<div class="t">21:14</div></div>
+          <div class="bubble me"><span class="au">Иван Бегин</span>Проверьте, что заметка лежит в папке базы. Пришлите скриншот, разберём.<div class="t">21:16</div></div>
+        </div>
+        <p class="ex">Пример переписки</p>
+      </div>
+    </div>
+    <div class="panel grid" role="tabpanel" id="p-after" aria-labelledby="t-after">
+      <div><h3>Ещё неделя поддержки</h3><p>После последней встречи чат продолжает работать неделю. Помогаю довести вашу систему до рабочего состояния. Вручение сертификатов на шестой встрече.</p></div>
+      <div>
+        <div class="vis chat">
+          <div class="bubble"><span class="au">Участник</span>Бот-консультант путает старые и новые цены.<div class="t">10:02</div></div>
+          <div class="bubble me"><span class="au">Иван Бегин</span>Уберите старый прайс из базы или поставьте ему статус «архив». Бот берёт только действующие.<div class="t">10:09</div></div>
+        </div>
+        <p class="ex">Пример переписки</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="diff" style="padding-top:24px">
+  <div class="wrap">
+    <h2>Чем отличается</h2>
+    <div class="cards c3 diff grid">
+      <div class="card rise"><span class="ck"></span><div><h3>Неделя, а не 3 месяца</h3><p>6 вечеров подряд, результат к концу недели.</p></div></div>
+      <div class="card rise"><span class="ck"></span><div><h3>Живые встречи</h3><p>Не видеозаписи: вопросы задаёте по ходу.</p></div></div>
+      <div class="card rise"><span class="ck"></span><div><h3>До 10 человек</h3><p>Преподаватель успевает посмотреть экран каждого.</p></div></div>
+      <div class="card rise"><span class="ck"></span><div><h3>Всё на вашем ноутбуке</h3><p>После курса система работает у вас, а не на учебной платформе.</p></div></div>
+      <div class="card rise"><span class="ck"></span><div><h3>Ваши задачи</h3><p>Продукт на 5-6 день собираете под свою работу.</p></div></div>
+      <div class="card rise"><span class="ck"></span><div><h3>Неделя поддержки</h3><p>После курса вопросы в чате ещё 7 дней.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="start" style="padding-top:24px">
+  <div class="wrap">
+    <h2>Что нужно на старте</h2>
+    <div class="cards c3 prep grid">
+      <div class="card rise">
+        <span class="tag">Обязательно</span>
+        <h3>Ноутбук и связь</h3>
+        <ul>
+          <li><b>Ноутбук с Windows 10/11 или macOS</b><span>С правами администратора. Рабочий ноутбук - согласуйте установку с ИТ.</span></li>
+          <li><b>Свободно 20 ГБ на диске</b><span>Лучше 16 ГБ памяти: так быстрее работают локальные модели.</span></li>
+          <li><b>Доступ к выбранным сервисам</b><span>Набор моделей подберём под ваши задачи, в том числе российские и локальные.</span></li>
+        </ul>
+      </div>
+      <div class="card rise">
+        <span class="tag">Обязательно</span>
+        <h3>Оплата и аккаунты</h3>
+        <ul>
+          <li><b>Карта для подписок</b><span>Подписки оформляете на себя, по условиям выбранного сервиса. Российским и локальным моделям иностранная карта не нужна.</span></li>
+          <li><b>Бюджет на подписки</b><span>Ориентир 20-60 $ в месяц, зависит от набора.</span></li>
+          <li><b>Почта и телефон для кодов</b><span>Плюс Telegram на телефоне и на ноутбуке.</span></li>
+        </ul>
+      </div>
+      <div class="card rise">
+        <span class="tag opt">Если нужно</span>
+        <h3>По желанию</h3>
+        <ul>
+          <li><b>ChatGPT</b><span>Если у вас уже есть аккаунт, оформленный на условиях OpenAI.</span></li>
+          <li><b>GitHub</b><span>Бесплатный аккаунт можно завести заранее, иначе сделаем на первой встрече.</span></li>
+          <li><b>Три рутинные задачи</b><span>Из вашей работы. Из них выберем ваш продукт на 5-6 день.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="teacher" style="padding-top:24px">
+  <div class="wrap">
+    <div class="teacher rise">
+      <div class="ph"><img src="/img/ivan-480.webp" width="480" height="480" alt="Иван Бегин"></div>
+      <div>
+        <h2>Иван Бегин</h2>
+        <div class="role">Предприниматель, автор программы</div>
+        <p>Индивидуальный предприниматель. 19 лет в финансах, управленческом учёте и методологии учёта. С 2024 года строю ИИ-решения для бизнеса: базы знаний, помощники в Telegram, автоматизация отчётов и выгрузок из 1С.</p>
+        <p>На курсе показываю инструменты, с которыми работаю каждый день, на учебной компании и задачах самих слушателей.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="partner" style="padding-top:24px;padding-bottom:40px">
+  <div class="wrap">
+    <h2>Что получает учебный центр</h2>
+    <div class="give grid">
+      <div class="card rise"><div><h3>С моей стороны</h3><ul>
+        <li>Программа по дням с домашними заданиями</li>
+        <li>Проведение всех 6 встреч и проверка заданий</li>
+        <li>Презентации на каждую встречу и раздаточные материалы</li>
+        <li>Учебная база вымышленной компании для практики</li>
+        <li>Чат группы на время курса и неделю после него</li>
+        <li>Пробный фрагмент занятия на 20 минут для вашей команды</li>
+      </ul></div></div>
+      <div class="card rise"><div><h3>Форматы</h3><ul>
+        <li>Открытая группа собственников и директоров</li>
+        <li>Корпоративная группа: продукт на 5-6 день собираем под задачи заказчика</li>
+        <li>Адаптация программы под вашу аудиторию и отрасль</li>
+        <li>Документ об обучении выдаёт центр по своим правилам</li>
+      </ul></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" class="contacts">
+  <div class="wrap">
+    <div class="lbl">Обсудить запуск</div>
+    <div class="clist">
+      <a href="https://t.me/ivan_swim" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.8 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L7 13.1l-4.6-1.4c-1-.3-1-1 .2-1.5L20.5 3.3c.8-.3 1.6.2 1.4 1Z"/></svg>
+        @ivan_swim
+      </a>
+      <a href="tel:+79150801787">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        +7 915 080-17-87
+      </a>
+      <a href="mailto:ivan.begin@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        ivan.begin@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Практический курс ИИ для собственников и директоров. Автор Иван Бегин</span>
+    <span>Учебная компания на скриншотах вымышлена. Названия и логотипы сервисов принадлежат их правообладателям, курс с ними не связан.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var h=document.querySelector('header');
+  addEventListener('scroll',function(){h.classList.toggle('scrolled',scrollY>8)},{passive:true});
+
+  var qb=document.querySelectorAll('.demo-q button');
+  qb.forEach(function(b){b.addEventListener('click',function(){
+    qb.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    document.querySelectorAll('.ans').forEach(function(a){a.classList.toggle('on',a.id==='a-'+b.dataset.a)});
+  })});
+
+  var tb=document.querySelectorAll('.tabs [role=tab]');
+  tb.forEach(function(t){t.addEventListener('click',function(){
+    tb.forEach(function(x){x.setAttribute('aria-selected',x===t?'true':'false')});
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id===t.getAttribute('aria-controls'))});
+  })});
+
+
+
+  var els=document.querySelectorAll('.rise');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
